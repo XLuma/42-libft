@@ -6,7 +6,7 @@
 /*   By: llaplant <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/06 11:52:58 by llaplant          #+#    #+#             */
-/*   Updated: 2021/05/06 13:19:48 by llaplant         ###   ########.fr       */
+/*   Updated: 2021/05/10 10:23:00 by llaplant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char	*ft_strchr(const char *str, int c)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (str[i])

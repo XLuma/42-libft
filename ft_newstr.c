@@ -1,33 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcmp.c                                        :+:      :+:    :+:   */
+/*   ft_newstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: llaplant <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: llaplant <llaplant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/05 11:29:13 by llaplant          #+#    #+#             */
-/*   Updated: 2021/05/10 10:11:18 by llaplant         ###   ########.fr       */
+/*   Created: 2021/05/26 10:24:23 by llaplant          #+#    #+#             */
+/*   Updated: 2021/06/22 09:41:20 by llaplant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_memcmp(const void *str1, const void *str2, size_t n)
+char	*ft_newstr(size_t size)
 {
-	unsigned char	*s1;
-	unsigned char	*s2;
-	size_t			i;
+	char	*str;
 
-	s1 = (unsigned char *)str1;
-	s2 = (unsigned char *)str2;
-	i = 0;
-	while (i < n)
+	str = (char *)malloc(sizeof(char) * (size + 1));
+	if (str)
 	{
-		if (s1[i] != s2[i])
-		{
-			return (s1[i] - s2[i]);
-		}
-		i++;
+		ft_bzero(str, (size + 1));
+		return (str);
 	}
-	return (0);
+	return (NULL);
 }

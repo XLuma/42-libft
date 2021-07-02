@@ -1,31 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: llaplant <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: llaplant <marvin@42quebec.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/05 11:08:22 by llaplant          #+#    #+#             */
-/*   Updated: 2021/05/10 10:10:52 by llaplant         ###   ########.fr       */
+/*   Created: 2021/05/10 09:11:01 by llaplant          #+#    #+#             */
+/*   Updated: 2021/05/10 14:41:19 by llaplant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memchr(const void *str, int c, size_t n)
+char	*ft_strnstr(const char *s1, const char *s2, size_t len)
 {
-	size_t			i;
-	unsigned char	*s;
-	unsigned char	chr;
+	size_t	i;
+	size_t	j;
 
-	s = (unsigned char *)str;
-	chr = (unsigned char)c;
 	i = 0;
-	while (i < n)
+	if (*s2 == '\0' || s2 == NULL)
+		return ((char *)s1);
+	while (s1[i] && i < len)
 	{
-		if (s[i] == chr)
+		j = 0;
+		while (s2[j] == s1[i + j] && i + j < len)
 		{
-			return (s + i);
+			if (s2[j + 1] == '\0')
+			{
+				return ((char *)s1 + i);
+			}
+			j++;
 		}
 		i++;
 	}

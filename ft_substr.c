@@ -6,7 +6,7 @@
 /*   By: llaplant <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/07 10:02:09 by llaplant          #+#    #+#             */
-/*   Updated: 2021/05/07 10:23:34 by llaplant         ###   ########.fr       */
+/*   Updated: 2021/05/13 14:39:21 by llaplant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,15 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	char	*cut;
 
 	i = 0;
-	cut = (char*)malloc(sizeof(cut) * (len + 1));
+	if (ft_strlen(s) < start)
+	{
+		cut = (char *)malloc(sizeof(char));
+		if (!cut)
+			return (NULL);
+		*cut = '\0';
+		return (cut);
+	}
+	cut = malloc(sizeof(char) * len + 1);
 	if (!cut)
 		return (NULL);
 	while (i < len)

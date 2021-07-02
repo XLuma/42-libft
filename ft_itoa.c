@@ -6,63 +6,67 @@
 /*   By: llaplant <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/07 12:29:15 by llaplant          #+#    #+#             */
-/*   Updated: 2021/05/07 15:23:18 by llaplant         ###   ########.fr       */
+/*   Updated: 2021/05/18 17:15:37 by llaplant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdlib.h>
 
-static char	*ft_strrev(char *str)
+static int	int_len(long n)
 {
-	int	i;
-	int	j;
-	int	tmp;
+	int	len;
 
-	i = 0;
-	j = ft_strlen(str);
-	while (j > i)
+	len = 0;
+	if (n < 0)
 	{
-		j--;
-		tmp = str[i];
-		str[i] = str[j];
-		str[j] = tmp;
-		i++;
+		n = n * -1;
+		len++;
 	}
-	return (str);
+	while (n > 0)
+	{
+		n = n / 10;
+		len++;
+	}
+	return (len);
+}
+
+char	*convert(char *tmp, long n, int len)
+{
+	if (n < 0)
+	{
+		tmp[0] = '-';
+		n = n * -1;
+	}
+	while (n > 0)
+	{
+		tmp[len] = '0' + (n % 10);
+		n = n / 10;
+		len--;
+	}
+	return (tmp);
 }
 
 char	*ft_itoa(int n)
 {
-	int	i;
-	int	neg;
+	int		i;
+	long	nb;
 	char	*tmp;
 
-	i = 0;
-	neg = 0;
-	tmp = malloc(sizeof(char) * 12);
-	if (tmp == NULL || n == 0)
-		return ((n == 0) ? "0" : NULL);
-	if (n == -2147483648)
-		return ("-2147483648");
-	if (n < 0)
+	nb = n;
+	i = int_len(nb);
+	if (i == 0)
+		i = 1;
+	tmp = (char *)malloc(sizeof(char) * (i + 1));
+	if (!tmp)
+		return (NULL);
+	tmp[i--] = '\0';
+	if (n == 0)
 	{
-		neg = 1;
-		n = n * -1;
+		tmp[0] = '0';
+		tmp[1] = '\0';
+		return (tmp);
 	}
-	while (n)
-	{
-		tmp[i] = (n % 10) + 48;
-		n = n / 10;
-		i++;
-	}
-	if (neg)
-		tmp[i] = '-';
-	return ft_strrev(tmp);
-}
-
-int main()
-{
-	char *num = ft_itoa(1654);
-	printf("%s", num);
-	return (0);
+	tmp = convert(tmp, nb, i);
+	return (tmp);
 }
