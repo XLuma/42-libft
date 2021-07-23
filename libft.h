@@ -6,7 +6,7 @@
 /*   By: llaplant <llaplant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/04 12:17:49 by luma              #+#    #+#             */
-/*   Updated: 2021/06/22 09:42:03 by llaplant         ###   ########.fr       */
+/*   Updated: 2021/07/23 08:54:10 by llaplant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ char			*ft_substr(char const *s, unsigned int start, size_t len);
 char			*ft_strjoin(char const *s1, char const *s2);
 char			*ft_strtrim(char const *s1, char const *set);
 char			*ft_strmapi(char const *s, char (*f)(unsigned int, char));
+int				ft_strchk(char *str, char *charset);
 char			*ft_strrchr(const char *str, int c);
 char			*ft_itoa(int n);
 void			ft_putchar_fd(char c, int fd);
