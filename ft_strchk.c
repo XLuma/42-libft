@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strchk.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: llaplant <marvin@42quebec.com>             +#+  +:+       +#+        */
+/*   By: llaplant <llaplant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/20 13:29:38 by llaplant          #+#    #+#             */
-/*   Updated: 2021/07/23 08:52:07 by llaplant         ###   ########.fr       */
+/*   Updated: 2021/07/23 10:17:28 by llaplant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,16 +32,14 @@ int	ft_strchk(char *str, char *charset)
 		while (charset[j])
 		{
 			if (str[i] == charset[j])
-				;
-			else if (j == charset_len)
-				return (1);
+				break ;
 			else
 				j++;
 		}
+		if (j == charset_len)
+			return (1);
 		j = 0;
 		i++;
 	}
 	return (0);
 }
-
-
