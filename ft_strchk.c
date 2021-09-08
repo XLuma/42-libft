@@ -6,7 +6,7 @@
 /*   By: llaplant <llaplant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/20 13:29:38 by llaplant          #+#    #+#             */
-/*   Updated: 2021/07/23 10:17:28 by llaplant         ###   ########.fr       */
+/*   Updated: 2021/09/08 09:38:13 by llaplant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
  * charset are present, returns 1 otherwise*/
 
 #include "libft.h"
+
 int	ft_strchk(char *str, char *charset)
 {
 	int	i;
