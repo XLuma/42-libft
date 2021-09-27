@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isstrdigit.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: llaplant <marvin@42quebec.com>             +#+  +:+       +#+        */
+/*   By: llaplant <llaplant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/27 11:02:21 by llaplant          #+#    #+#             */
-/*   Updated: 2021/09/27 11:04:36 by llaplant         ###   ########.fr       */
+/*   Updated: 2021/09/27 11:23:32 by llaplant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ int	ft_isstrdigit(char *str)
 			i++;
 		else
 			return (1);
-		i++;
 	}
 	return (0);
 }
