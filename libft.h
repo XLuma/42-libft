@@ -6,7 +6,7 @@
 /*   By: llaplant <llaplant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/04 12:17:49 by luma              #+#    #+#             */
-/*   Updated: 2021/07/23 08:54:10 by llaplant         ###   ########.fr       */
+/*   Updated: 2021/09/27 11:05:05 by llaplant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ void			*ft_memmove(void *dest, const void *src, size_t n);
 void			*ft_memchr(const void *str, int c, size_t n);
 int				ft_isalpha(int c);
 int				ft_isdigit(int c);
+int				ft_isstrdigit(char *str);
 int				ft_isalnum(int c);
 int				ft_isascii(int c);
 int				ft_isprint(int c);
