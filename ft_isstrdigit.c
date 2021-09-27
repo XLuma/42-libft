@@ -6,7 +6,7 @@
 /*   By: llaplant <llaplant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/27 11:02:21 by llaplant          #+#    #+#             */
-/*   Updated: 2021/09/27 11:23:32 by llaplant         ###   ########.fr       */
+/*   Updated: 2021/09/27 15:09:23 by llaplant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ int	ft_isstrdigit(char *str)
 	i = 0;
 	while (str[i])
 	{
+		if (i == 0 && str[i] == '-')
+			i++;
 		if (str[i] >= 48 && str[i] <= 57)
 			i++;
 		else
