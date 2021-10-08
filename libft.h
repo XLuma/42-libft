@@ -6,7 +6,7 @@
 /*   By: llaplant <llaplant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/04 12:17:49 by luma              #+#    #+#             */
-/*   Updated: 2021/09/27 15:10:38 by llaplant         ###   ########.fr       */
+/*   Updated: 2021/10/08 10:28:47 by llaplant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,7 @@ int				ft_strncmp(const char *s1, const char *s2, size_t n);
 size_t			ft_strlcpy(char *dst, const char *src, size_t size);
 size_t			ft_strlcat(char *dest, const char *src, size_t	size);
 int				ft_atoi(char *str);
+long			ft_atol(char *str);
 char			*ft_strnstr(const char *s1, const char *s2, size_t len);
 char			**ft_split(char const *s, char c);
 char			*ft_newstr(size_t size);
